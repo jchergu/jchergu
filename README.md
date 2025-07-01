@@ -66,5 +66,5 @@ For all the infos about Jacopo, please check the  [website](https://jacopochergu
 ## 🚀 Social Links
 [![Instagram](https://img.shields.io/badge/Instagram-125688?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/gosuilgiallo/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jacopochergui/)
-[![Spotify](https://img.shields.io/badge/Spotify-1DB954?style=for-the-badge&logo=spotify&logoColor=white)](https://open.spotify.com/artist/1NB1qz1n0S3IQPOEwP3g3A) 
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/gosuilgiallo)
+[![Spotify](https://img.shields.io/badge/Spotify-1DB954?style=for-the-badge&logo=spotify&logoColor=white)](https://open.spotify.com/artist/5cOLW8HHCoGEP23cejkBZE?si=gB-vWruTSmiBD9J0D37CGQ) 
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jchergu)
