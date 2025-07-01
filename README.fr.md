@@ -22,7 +22,7 @@
 
 # 🐒 Jacopo chergui 🎸
 
-Jacopo Chergui is an italian computer engineer and musician, born to build solutions and good music.
+Jacopo Chergui est un ingénieur informatique italien et musicien, né pour construire des solutions et de la bonne musique.
 
 ## 📚 Langues
 
