@@ -86,7 +86,10 @@ jobs:
           if ! git diff --quiet --staged; then
             git stash
             git pull --rebase origin ${{ github.ref_name }}
-            git stash pop
-            git commit -m "Auto-translate READMEs"
-            git push
+            git stash pop || true
+            git add .
+            if ! git diff --quiet --staged; then
+              git commit -m "Auto-translate READMEs"
+              git push
+            fi
           fi
