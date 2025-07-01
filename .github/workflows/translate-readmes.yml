@@ -13,88 +13,32 @@ jobs:
   translate_readme:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+      
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
-          node-version: 16.x
-      
-      - name: Translate to Italian
-        uses: dephraiim/translate-readme@main
-        with:
-          LANG: it
-          OUTPUT_PATH: ./README.it.md
-      
-      - name: Translate to French
-        uses: dephraiim/translate-readme@main
-        with:
-          LANG: fr
-          OUTPUT_PATH: ./README.fr.md
-      
-      - name: Translate to Spanish
-        uses: dephraiim/translate-readme@main
-        with:
-          LANG: es
-          OUTPUT_PATH: ./README.es.md
-      
-      - name: Translate to German
-        uses: dephraiim/translate-readme@main
-        with:
-          LANG: de
-          OUTPUT_PATH: ./README.de.md
-      
-      - name: Translate to Japanese
-        uses: dephraiim/translate-readme@main
-        with:
-          LANG: ja
-          OUTPUT_PATH: ./README.ja.md
-      
-      - name: Translate to Chinese Simplified
-        uses: dephraiim/translate-readme@main
-        with:
-          LANG: zh-CN
-          OUTPUT_PATH: ./README.zh-CN.md
-      
-      - name: Translate to Russian
-        uses: dephraiim/translate-readme@main
-        with:
-          LANG: ru
-          OUTPUT_PATH: ./README.ru.md
-      
-      - name: Update language links in translated READMEs
+          node-version: '16'
+
+      - name: Translate READMEs
         run: |
-          for lang in it fr es de ja zh-CN ru; do
-            file="./README.$lang.md"
-            if [ -f "$file" ]; then
-              # Sostituisci i percorsi dei link delle bandiere
-              sed -i 's|/README.md|/README.md|g' "$file"
-              sed -i "s|./README.it.md|./README.$lang.md|g" "$file"
-              sed -i "s|./README.fr.md|./README.$lang.md|g" "$file"
-              sed -i "s|./README.es.md|./README.$lang.md|g" "$file"
-              sed -i "s|./README.de.md|./README.$lang.md|g" "$file"
-              sed -i "s|./README.ja.md|./README.$lang.md|g" "$file"
-              sed -i "s|./README.zh-CN.md|./README.$lang.md|g" "$file"
-              sed -i "s|./README.ru.md|./README.$lang.md|g" "$file"
-            fi
+          langs=(it fr es de ja zh-CN ru)
+          for lang in "${langs[@]}"; do
+            echo "Translating to $lang..."
+            npx translate-readme --lang "$lang" --output "./README.$lang.md" || echo "❌ Failed to translate $lang"
           done
-      
-      - name: Commit and push changes
+
+      - name: Commit and push translated files
         run: |
           set -e
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add .
-          if ! git diff --quiet --staged; then
-            attempts=0
-            until [ $attempts -ge 3 ]
-            do
-              if git commit -m "Auto-translate READMEs"; then
-                git fetch origin ${{ github.ref_name }}
-                git rebase origin/${{ github.ref_name }} || (git rebase --abort && exit 1)
-                git push
-                break
-              fi
-              attempts=$((attempts+1))
-              sleep 2
-            done
+          
+          git add README.*.md || echo "No README translations to add"
+
+          if ! git diff --cached --quiet; then
+            git commit -m "Auto-translate READMEs"
+            git push
+          else
+            echo "No changes to commit."
           fi
