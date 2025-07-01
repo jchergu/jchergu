@@ -14,31 +14,68 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '16'
 
-      - name: Translate READMEs
-        run: |
-          langs=(it fr es de ja zh-CN ru)
-          for lang in "${langs[@]}"; do
-            echo "Translating to $lang..."
-            npx translate-readme --lang "$lang" --output "./README.$lang.md" || echo "❌ Failed to translate $lang"
-          done
+      - name: Translate to Italian
+        uses: dephraiim/translate-readme@main
+        with:
+          LANG: it
+          OUTPUT_PATH: ./README.it.md
+        continue-on-error: true
 
-      - name: Commit and push translated files
+      - name: Translate to French
+        uses: dephraiim/translate-readme@main
+        with:
+          LANG: fr
+          OUTPUT_PATH: ./README.fr.md
+        continue-on-error: true
+
+      - name: Translate to Spanish
+        uses: dephraiim/translate-readme@main
+        with:
+          LANG: es
+          OUTPUT_PATH: ./README.es.md
+        continue-on-error: true
+
+      - name: Translate to German
+        uses: dephraiim/translate-readme@main
+        with:
+          LANG: de
+          OUTPUT_PATH: ./README.de.md
+        continue-on-error: true
+
+      - name: Translate to Japanese
+        uses: dephraiim/translate-readme@main
+        with:
+          LANG: ja
+          OUTPUT_PATH: ./README.ja.md
+        continue-on-error: true
+
+      - name: Translate to Chinese (Simplified)
+        uses: dephraiim/translate-readme@main
+        with:
+          LANG: zh-CN
+          OUTPUT_PATH: ./README.zh-CN.md
+        continue-on-error: true
+
+      - name: Translate to Russian
+        uses: dephraiim/translate-readme@main
+        with:
+          LANG: ru
+          OUTPUT_PATH: ./README.ru.md
+        continue-on-error: true
+
+      - name: Commit and push changes
         run: |
-          set -e
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          
-          git add README.*.md || echo "No README translations to add"
-
+          git add README.*.md
           if ! git diff --cached --quiet; then
             git commit -m "Auto-translate READMEs"
             git push
           else
             echo "No changes to commit."
-          fi
