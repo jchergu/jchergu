@@ -88,9 +88,9 @@ jobs:
             attempts=0
             until [ $attempts -ge 3 ]
             do
-              git fetch origin ${{ github.ref_name }}
-              git rebase origin/${{ github.ref_name }} || (git rebase --abort && exit 1)
               if git commit -m "Auto-translate READMEs"; then
+                git fetch origin ${{ github.ref_name }}
+                git rebase origin/${{ github.ref_name }} || (git rebase --abort && exit 1)
                 git push
                 break
               fi
