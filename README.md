@@ -54,6 +54,9 @@ Jacopo Chergui is an italian computer engineer and musician, born to build solut
 ![CUDA](https://img.shields.io/badge/CUDA-0768A2?style=for-the-badge&logo=nvidia&logoColor=white)
 ![Excel](https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
 ![Intel](https://img.shields.io/badge/Intel-0071C5?style=for-the-badge&logo=intel&logoColor=white)
+![EdgeX](https://img.shields.io/badge/EdgeX-0072CE?style=for-the-badge&logo=linux-foundation&logoColor=white)
+![EMQX](https://img.shields.io/badge/EMQX-00D4AA?style=for-the-badge&logo=eclipse-mosquitto&logoColor=white)
+![Ditto](https://img.shields.io/badge/Ditto-FF6B35?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMTMuMDkgOC4yNkwyMCA5TDEzLjA5IDE1Ljc0TDEyIDIyTDEwLjkxIDE1Ljc0TDQgOUwxMC45MSA4LjI2TDEyIDJaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K&logoColor=white)
 
 ## 💻 Platforms
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
@@ -62,8 +65,9 @@ Jacopo Chergui is an italian computer engineer and musician, born to build solut
 ![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 
 
-## 🚀 Social Links
+## 🚀 Social Links & Music
 [![Instagram](https://img.shields.io/badge/Instagram-125688?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/gosuilgiallo/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jacopochergui/)
 [![Spotify](https://img.shields.io/badge/Spotify-1DB954?style=for-the-badge&logo=spotify&logoColor=white)](https://open.spotify.com/artist/5cOLW8HHCoGEP23cejkBZE?si=gB-vWruTSmiBD9J0D37CGQ) 
+[![Apple Music](https://img.shields.io/badge/Apple%20Music-FA243C?style=for-the-badge&logo=apple-music&logoColor=white)](https://music.apple.com/us/artist/gosu/1341481732)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jchergu)
